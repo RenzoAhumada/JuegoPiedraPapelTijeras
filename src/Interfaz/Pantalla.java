@@ -8,17 +8,11 @@ package Interfaz;
 import Main.controlador.Controlador;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author PC-MARTS
- */
+
 public class Pantalla extends javax.swing.JFrame{
 
     private final Controlador m = new Controlador();
-    
-    /**
-     * Creates new form Execute
-     */
+ 
     public Pantalla() {
         initComponents();
         this.whoWin.setText("-");
@@ -127,55 +121,55 @@ public class Pantalla extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void piedraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_piedraActionPerformed
-       //TIRA MAQUINA
+
        int valorMaquina = m.turnoMaquina();
-       //PINTO VALORES DE PLAYER
+
        this.sacaPlayer.setIcon(m.traductorTurnero(0));
        this.sacaPlayer.repaint();
-       //PINTO VALORES DE COMPUTER
+   
        this.sacaComputer.setIcon(m.traductorTurnero(valorMaquina));
        this.sacaComputer.repaint();
-       //QUIEN GANO
+      
        String Ganador = m.versus(0, valorMaquina);
        this.whoWin.setText(Ganador);
        m.contadorDeVictorias(Ganador);
-       //CONTADOR DE PUNTOS
+    
        this.scoreComputer.setText(Integer.toString(m.getGanaComputer()));
        this.scorePlayer.setText(Integer.toString(m.getGanaPlayer()));
     }//GEN-LAST:event_piedraActionPerformed
 
     private void papelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_papelActionPerformed
-       //TIRA MAQUINA
+    
        int valorMaquina = m.turnoMaquina();
-       //PINTO VALORES DE PLAYER
+     
        this.sacaPlayer.setIcon(m.traductorTurnero(1));
        this.sacaPlayer.repaint();
-       //PINTO VALORES DE COMPUTER
+       
        this.sacaComputer.setIcon(m.traductorTurnero(valorMaquina));
        this.sacaComputer.repaint();
-       //QUIEN GANO
+     
        String Ganador = m.versus(1, valorMaquina);
        this.whoWin.setText(Ganador);
        m.contadorDeVictorias(Ganador);
-       //CONTADOR DE PUNTOS 
+    
        this.scoreComputer.setText(Integer.toString(m.getGanaComputer()));
        this.scorePlayer.setText(Integer.toString(m.getGanaPlayer()));
     }//GEN-LAST:event_papelActionPerformed
 
     private void tijeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tijeraActionPerformed
-       //TIRA MAQUINA
+      
        int valorMaquina = m.turnoMaquina();
-       //PINTO VALORES DE PLAYER
+       
        this.sacaPlayer.setIcon(m.traductorTurnero(2));
        this.sacaPlayer.repaint();
-       //PINTO VALORES DE COMPUTER
+       
        this.sacaComputer.setIcon(m.traductorTurnero(valorMaquina));
        this.sacaComputer.repaint();
-       //QUIEN GANO
+       
        String Ganador = m.versus(2, valorMaquina);
        this.whoWin.setText(Ganador);
        m.contadorDeVictorias(Ganador);
-       //CONTADOR DE PUNTOS
+     
        this.scoreComputer.setText(Integer.toString(m.getGanaComputer()));
        this.scorePlayer.setText(Integer.toString(m.getGanaPlayer()));
     }//GEN-LAST:event_tijeraActionPerformed
